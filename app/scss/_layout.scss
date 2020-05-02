@@ -1,0 +1,33 @@
+body {
+  margin: 0 auto;
+}
+
+main {
+  display: grid;
+  grid-template-columns: auto 420px;
+  grid-gap: 24px;
+  grid-template-areas:
+    'tube sidebar'
+    'strava sidebar';
+  padding: 24px;
+}
+
+#status {
+  grid-area: tube;
+}
+
+#weather {
+  grid-area: weather;
+}
+
+#strava {
+  grid-area: strava;
+}
+
+.outfit {
+  grid-area: outfit
+}
+
+.sidebar {
+  grid-area: sidebar;
+}

@@ -1,0 +1,63 @@
+.card {
+  border-radius: 4px;
+  box-shadow:
+    0 1px 1px 0 rgba(60, 64, 67, .08),
+    0 1px 3px 1px rgba(60, 64, 67, .16);
+  font-size: 14px;
+  margin-bottom: 16px;
+
+  &__header {
+    height: 72px;
+    line-height: initial;
+    overflow: hidden;
+    padding: 16px;
+  }
+
+  &__avatar {
+    float: left;
+    margin-right: 16px;
+    
+    &--round {
+      border-radius: 50%;
+    }
+
+    &--tfl {
+      margin-left: -5px;
+      margin-right: 11px;
+    }
+  }
+
+  &__title {
+    color: rgba(0, 0, 0, .9);
+    font-size: 20px;
+    margin: 0;
+  }
+
+  &__subtitle {
+    color: rgba(0, 0, 0, .58);
+    margin: 2px 0 0;
+  }
+
+  &__map {
+    display: block;
+    height: auto;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  &__detail {
+    padding: 0 16px 16px;
+  }
+
+  &__description {
+    color: rgba(0, 0, 0, .58);
+    display: block;
+    margin: 0;
+  }
+
+  &__actions {
+    justify-content: space-between;
+    display: flex;
+    margin-top: 24px;
+  }
+}

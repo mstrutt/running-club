@@ -1,0 +1,39 @@
+.header {
+  align-items: center;
+  background: #ddd;
+  box-shadow:
+    0 1px 1px 0 rgba(60, 64, 67, .08),
+    0 1px 3px 1px rgba(60, 64, 67, .16);
+  display: flex;
+  min-height: 64px;
+  padding: 8px 12px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  &__title {
+    font-size: 20px;
+    margin: 0 auto 0 20px;
+  }
+
+  &__actions {
+    display: flex;
+  }
+}
+
+.button {
+  background: transparent;
+  color: blue;
+  border: 0 none;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 12px;
+
+  &--icon {
+    height: 48px;
+    width: 48px;
+  }
+}
