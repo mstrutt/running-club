@@ -1,5 +1,5 @@
 {
-  "name": "run-club",
+  "name": "running-club",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,8 @@
     "develop": "parcel watch app/index.html app/icons/*"
   },
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "git@github.com:mstrutt/running-club.git"
   },
   "author": "Michael Strutt",
   "license": "MIT",
