@@ -1,11 +1,13 @@
 <script>
   import Vue from 'vue';
 
+  import ClubActivityFeed from './components/ClubActivityFeed';
   import ClubInfo from './components/ClubInfo';
   import Header from './components/Header';
 
   export default {
     components: {
+      ClubActivityFeed,
       ClubInfo,
       Header,
     },
@@ -18,14 +20,9 @@
 
 <template>
   <div>
-    
-
     <Header/>
-
     <main>
-      <ul class="main h-unstyled-list" id="strava">
-        <br>
-      </ul>
+      <ClubActivityFeed class="main" />
       <ClubInfo class="sideber" />
     </main>
   </div>
