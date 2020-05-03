@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node --experimental-modules ./server/index.mjs",
-    "develop": "parcel watch app/index.html app/logos/*"
+    "develop": "parcel watch app/index.html app/icons/*"
   },
   "repository": {
     "type": "git"
