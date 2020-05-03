@@ -7,25 +7,12 @@ main {
   grid-template-columns: auto 420px;
   grid-gap: 24px;
   grid-template-areas:
-    'tube sidebar'
-    'strava sidebar';
+    'main sidebar';
   padding: 24px;
 }
 
-#status {
-  grid-area: tube;
-}
-
-#weather {
-  grid-area: weather;
-}
-
-#strava {
-  grid-area: strava;
-}
-
-.outfit {
-  grid-area: outfit
+.main {
+  grid-area: main;
 }
 
 .sidebar {

@@ -119,6 +119,19 @@ app.get('/strava', function(req, res) {
   .catch(handleError(res));
 });
 
+app.get('/strava/clubs/potato', function(req, res) {
+  const { access_token, refresh_token } = req.query;
+  const authOptions = {
+    headers: { 'Authorization': 'Bearer ' + access_token },
+    json: true
+  };
+  stravaFetch(`https://strava.com/api/v3/clubs/potato?access_token=${access_token}`, authOptions, refresh_token)
+  .then((club) => {
+    res.send(JSON.stringify(club));
+  })
+  .catch(handleError(res));
+});
+
 function refreshStravaToken(refresh_token) {
   console.log('Attempting to refresh token...', refresh_token);
   var authOptions = {
