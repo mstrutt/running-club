@@ -119,13 +119,14 @@ app.get('/strava', function(req, res) {
   .catch(handleError(res));
 });
 
-app.get('/strava/clubs/potato', function(req, res) {
+app.get('/strava/:api_path(*)', function(req, res) {
   const { access_token, refresh_token } = req.query;
+  const { api_path } = req.params;
   const authOptions = {
     headers: { 'Authorization': 'Bearer ' + access_token },
     json: true
   };
-  stravaFetch(`https://strava.com/api/v3/clubs/potato?access_token=${access_token}`, authOptions, refresh_token)
+  stravaFetch(`https://strava.com/api/v3/${api_path}?access_token=${access_token}`, authOptions, refresh_token)
   .then((club) => {
     res.send(JSON.stringify(club));
   })
