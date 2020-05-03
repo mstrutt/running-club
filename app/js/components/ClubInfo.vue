@@ -1,24 +1,11 @@
 <script>
   export default {
     created() {
-      this.getClubInfo();
+      this.$store.dispatch('getClubInfo');
     },
-    data() {
-      return {
-        club: {},
-      };
-    },
-    methods: {
-      getClubInfo() {
-        const tokens = new URLSearchParams({
-          access_token: this.$store.state.tokens.access,
-          refresh_token: this.$store.state.tokens.refresh,
-        });
-        return fetch(`./strava/clubs/${this.$store.state.club}?${tokens.toString()}`)
-          .then(response => response.json())
-          .then((data) => {
-            this.club = Object.assign({}, data);
-          });
+    computed: {
+      club() {
+        return this.$store.state.club_info;
       }
     },
   }
@@ -32,9 +19,7 @@
     }
 
     &__detail-icon {
-      display: inline-block;
       margin-right: .25em;
-      vertical-align: text-bottom;
     }
   }
 </style>
@@ -44,8 +29,8 @@
     <img class="club__logo" :src="club.profile" :alt="club.name" />
     <h2 class="club__name">{{ club.name }}</h2>
     <ul class="club__details h-unstyled-list">
-      <li><img class="club__detail-icon" src="../../icons/location_city.svg" alt="location" /> {{ club.city }}, {{ club.country }}</li>
-      <li><img class="club__detail-icon" src="../../icons/group.svg" alt="members" /> {{ club.member_count }}</li>
+      <li><img class="club__detail-icon icon icon--inline" src="../../icons/location_city.svg" alt="location" /> {{ club.city }}, {{ club.country }}</li>
+      <li><img class="club__detail-icon icon icon--inline" src="../../icons/group.svg" alt="members" /> {{ club.member_count }}</li>
     </ul>
     <p class="club__description">{{ club.description }}</p>
   </div>
